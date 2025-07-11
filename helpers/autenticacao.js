@@ -2,7 +2,7 @@ const request = require('supertest');
 const { postLogin } = require('../fixtures/postLogin.json')
 
 const bodyLogin = { ...postLogin }
-console.log(bodyLogin)
+
 const obterToken = async (bodyLogin) => {
     const response = await request(process.env.BASE_URL)
         .post("/login")
