@@ -6,13 +6,13 @@ const { postTransferencias } = require('../fixtures/postTransferencias.json')
 const { postLogin } = require('../fixtures/postLogin.json')
 
 describe("Transferências", () => {
-  describe("POST /transferencias", () => {
-    let token = null
+  let token = null
     beforeEach (async ()=> {
       const bodyLogin = { ...postLogin }
       token = await obterToken(bodyLogin)
     })
-
+    
+  describe("POST /transferencias", () => {
     it("Deve retornar 201 para transferencia com valores igual ou maior que R$ 10.00", async () => {
       const bodyTranferencia = { ...postTransferencias }
 
